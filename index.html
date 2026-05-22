@@ -205,79 +205,33 @@
       cursor: pointer;
       text-decoration: none;
       display: block;
+      background: #1e1e1e;
     }
 
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
     }
 
-    .card-inner {
-      padding: 20px;
-      height: 100%;
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    /* カラーバリエーション */
-    .card-blue   { background: linear-gradient(135deg, #1a237e, #283593); }
-    .card-orange { background: linear-gradient(135deg, #bf360c, #e64a19); }
-    .card-purple { background: linear-gradient(135deg, #4a148c, #6a1b9a); }
-    .card-green  { background: linear-gradient(135deg, #1b5e20, #2e7d32); }
-    .card-dark   { background: linear-gradient(135deg, #212121, #424242); }
-    .card-teal   { background: linear-gradient(135deg, #006064, #00838f); }
-    .card-red    { background: linear-gradient(135deg, #b71c1c, #c62828); }
-
-    .card-tag {
-      display: inline-block;
-      background: rgba(255,255,255,0.2);
-      font-size: 0.7rem;
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      background: #c9a227;
+      color: #000;
+      font-size: 0.88rem;
       font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 12px;
-      margin-bottom: 10px;
-      letter-spacing: 0.5px;
+      gap: 6px;
     }
 
-    .card-tag.gold { background: #c9a227; color: #000; }
-    .card-tag.limited { background: #e53935; color: #fff; }
-
-    .card h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      line-height: 1.4;
-      margin-bottom: 8px;
-    }
-
-    .card .highlight {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #ffd54f;
-      line-height: 1.1;
-      margin: 6px 0;
-    }
-
-    .card .highlight span {
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .card .sub {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.75);
-      margin-top: 6px;
-      line-height: 1.5;
-    }
-
-    .card .detail-btn {
-      display: inline-block;
-      margin-top: 12px;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.3);
-      color: #fff;
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
+    .card-footer i { font-size: 0.8rem; }
 
     /* 特典セクション */
     .benefits {
@@ -419,83 +373,45 @@
   <div class="campaign-grid">
 
     <!-- 2,500円分ポイント -->
-    <a href="https://premium.dmm.com/" target="_blank" class="card card-blue">
-      <div class="card-inner">
-        <span class="card-tag limited">〜5/31まで</span>
-        <h3>DMMプレミアム新規登録で<br>DMMポイントプレゼント</h3>
-        <div class="highlight">2,500<span>円分</span></div>
-        <p class="sub">DMMポイントを最大2,500円分プレゼント！<br>この機会をお見逃しなく</p>
-        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
-      </div>
+    <a href="https://premium.dmm.com/" target="_blank" class="card">
+      <img src="images/banner_2500pt.jpg" alt="最大2,500円分DMMポイントプレゼント">
+      <div class="card-footer">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></div>
     </a>
 
     <!-- DMM英会話 学生限定 -->
-    <a href="https://premium.dmm.com/" target="_blank" class="card card-green">
-      <div class="card-inner">
-        <span class="card-tag limited">学生限定</span>
-        <h3>DMM英会話<br>新規・再入会でレッスン受講</h3>
-        <div class="highlight">20,400<span>円分</span></div>
-        <p class="sub">プラスネイティブチケット12枚分<br>追加料金なし・語条件あり</p>
-        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
-      </div>
+    <a href="https://premium.dmm.com/" target="_blank" class="card">
+      <img src="images/banner_eikaiwa_student.jpg" alt="DMM英会話 学生限定 最大20,400円分">
+      <div class="card-footer">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></div>
     </a>
 
     <!-- DMM英会話 90%OFF -->
-    <a href="https://premium.dmm.com/" target="_blank" class="card card-orange">
-      <div class="card-inner">
-        <span class="card-tag gold">会員限定</span>
-        <h3>DMM英会話<br>スタンダードプラン</h3>
-        <div class="highlight">初月90<span>%OFF</span></div>
-        <p class="sub">月6,980円 → <strong style="color:#ffd54f;font-size:1.1rem;">初月698円</strong><br>毎日1レッスン・対象プランが新規・再開</p>
-        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
-      </div>
+    <a href="https://premium.dmm.com/" target="_blank" class="card">
+      <img src="images/banner_eikaiwa_90off.jpg" alt="DMM英会話 初月90%OFF">
+      <div class="card-footer">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></div>
     </a>
 
     <!-- DMMオンクレ -->
-    <a href="https://premium.dmm.com/" target="_blank" class="card card-dark">
-      <div class="card-inner">
-        <span class="card-tag gold">会員限定</span>
-        <h3>DMMオンクレ<br>初回利用者に</h3>
-        <div class="highlight">2<span>プレイ無料！</span></div>
-        <p class="sub">DMMプレミアム会員限定！<br>初めてオンクレを利用する方対象（※一部台を除く）</p>
-        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
-      </div>
+    <a href="https://premium.dmm.com/" target="_blank" class="card">
+      <img src="images/banner_onkure.jpg" alt="DMMオンクレ 初回2プレイ無料">
+      <div class="card-footer">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></div>
     </a>
 
     <!-- DMM × pixiv -->
-    <a href="https://premium.dmm.com/" target="_blank" class="card card-purple">
-      <div class="card-inner">
-        <span class="card-tag gold">セットプラン</span>
-        <h3>DMM × pixiv<br>推しホーダイ</h3>
-        <div class="highlight">980<span>円/月（税込）</span></div>
-        <p class="sub">DMMTVとpixivがお得な料金で<br>一緒に楽しめるセットプラン！</p>
-        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
-      </div>
+    <a href="https://premium.dmm.com/" target="_blank" class="card">
+      <img src="images/banner_pixiv.jpg" alt="DMM×pixiv 推しホーダイ 月額980円">
+      <div class="card-footer">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></div>
     </a>
 
     <!-- お友達紹介 -->
-    <a href="https://premium.dmm.com/" target="_blank" class="card card-teal">
-      <div class="card-inner">
-        <span class="card-tag">お友達紹介</span>
-        <h3>お友達紹介プログラム<br>紹介するともらえる！</h3>
-        <div class="highlight" style="font-size:1.4rem;">紹介者 <span>500円分</span></div>
-        <p class="sub" style="margin-top:4px;">お友達には <strong style="color:#ffd54f;font-size:1.1rem;">1,000円相当</strong> の特典<br>えらべるPayでもらえる</p>
-        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
-      </div>
+    <a href="https://premium.dmm.com/" target="_blank" class="card">
+      <img src="images/banner_friends.jpg" alt="お友達紹介プログラム 500円分／1,000円相当">
+      <div class="card-footer">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></div>
     </a>
 
     <!-- アニメイベント -->
-    <a href="https://premium.dmm.com/" target="_blank" class="card card-red" style="grid-column: 1 / -1;">
-      <div class="card-inner">
-        <span class="card-tag gold">DMMTVイベント</span>
-        <h3>TVアニメ「上伊那ぼたん、酔へる姿は百合の花」<br>サイン入りグラスGETのチャンス！</h3>
-        <p class="sub" style="margin-top:8px;">
-          DMMTVで視聴してサイン入りグラスが当たる！<br>
-          サインキャスト：上伊那ぼたん役 <strong>鈴代紗弓様</strong> ／ 硫波いぶき役 <strong>青山吉能様</strong><br>
-          DMMTVアニメ公式Xにて佐久間監督ロングインタビュー掲載中！
-        </p>
-        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
-      </div>
+    <a href="https://premium.dmm.com/" target="_blank" class="card" style="grid-column: 1 / -1;">
+      <img src="images/banner_anime.jpg" alt="上伊那ぼたん サイン入りグラスGETのチャンス">
+      <div class="card-footer">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></div>
     </a>
 
   </div>
