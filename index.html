@@ -22,10 +22,14 @@
     }
 
     .hero h1 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 900;
       margin-bottom: 14px;
       line-height: 1.4;
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 { font-size: 1.35rem; }
     }
 
     .hero h1 span { color: #c9a227; }
@@ -73,7 +77,7 @@
     /* ボタン */
     .cta {
       text-align: center;
-      padding: 8px 20px 52px;
+      padding: 20px 20px 20px;
     }
 
     .cta a {
@@ -82,10 +86,11 @@
       color: #000;
       font-size: 1.05rem;
       font-weight: 900;
-      padding: 16px 52px;
+      padding: 16px 40px;
       border-radius: 50px;
       text-decoration: none;
       box-shadow: 0 4px 20px rgba(201,162,39,0.4);
+      white-space: nowrap;
     }
   </style>
 </head>
