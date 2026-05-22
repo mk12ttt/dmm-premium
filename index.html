@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DMMプレミアム 紹介サイト</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+    }
+
+    /* ヘッダー */
+    header {
+      background: #1a1a1a;
+      border-bottom: 2px solid #c9a227;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #c9a227;
+    }
+
+    .header-btn {
+      background: #c9a227;
+      color: #000;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .header-btn:hover { background: #e8ba2a; }
+
+    /* ヒーロー */
+    .hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2208 50%, #1a1a1a 100%);
+      padding: 50px 20px 40px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #c9a227;
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span { color: #c9a227; }
+
+    .hero p {
+      font-size: 0.95rem;
+      color: #ccc;
+      line-height: 1.8;
+      max-width: 500px;
+      margin: 0 auto 28px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #e8ba2a, #c9a227);
+      color: #000;
+      font-size: 1rem;
+      font-weight: 900;
+      padding: 14px 40px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(201,162,39,0.4);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(201,162,39,0.6);
+    }
+
+    .cta-btn i { margin-right: 8px; }
+
+    /* サービス概要 */
+    .about {
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60%;
+      height: 3px;
+      background: #c9a227;
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    .about p {
+      color: #bbb;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      margin-top: 20px;
+    }
+
+    /* ナビタブ */
+    .nav-tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-tab {
+      background: #222;
+      border: 1px solid #444;
+      color: #ccc;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .nav-tab:hover, .nav-tab.active {
+      background: #c9a227;
+      color: #000;
+      border-color: #c9a227;
+    }
+
+    /* キャンペーンセクション */
+    .campaigns {
+      padding: 0 20px 50px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .campaigns-title {
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #c9a227;
+    }
+
+    .campaign-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 600px) {
+      .campaign-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* キャンペーンカード */
+    .card {
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+
+    .card-inner {
+      padding: 20px;
+      height: 100%;
+    }
+
+    /* カラーバリエーション */
+    .card-blue   { background: linear-gradient(135deg, #1a237e, #283593); }
+    .card-orange { background: linear-gradient(135deg, #bf360c, #e64a19); }
+    .card-purple { background: linear-gradient(135deg, #4a148c, #6a1b9a); }
+    .card-green  { background: linear-gradient(135deg, #1b5e20, #2e7d32); }
+    .card-dark   { background: linear-gradient(135deg, #212121, #424242); }
+    .card-teal   { background: linear-gradient(135deg, #006064, #00838f); }
+    .card-red    { background: linear-gradient(135deg, #b71c1c, #c62828); }
+
+    .card-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .card-tag.gold { background: #c9a227; color: #000; }
+    .card-tag.limited { background: #e53935; color: #fff; }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .card .highlight {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #ffd54f;
+      line-height: 1.1;
+      margin: 6px 0;
+    }
+
+    .card .highlight span {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .card .sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.75);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    .card .detail-btn {
+      display: inline-block;
+      margin-top: 12px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* 特典セクション */
+    .benefits {
+      background: #1a1a1a;
+      padding: 40px 20px;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+
+    .benefits-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 480px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+    }
+
+    .benefit-item {
+      background: #222;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 20px 12px;
+      text-align: center;
+    }
+
+    .benefit-item i {
+      font-size: 2rem;
+      color: #c9a227;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .benefit-item h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .benefit-item p {
+      font-size: 0.78rem;
+      color: #999;
+      line-height: 1.5;
+    }
+
+    /* CTA下部 */
+    .cta-section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .cta-section h2 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .cta-section h2 span { color: #c9a227; }
+
+    .cta-section p {
+      color: #999;
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
+
+    /* フッター */
+    footer {
+      background: #1a1a1a;
+      border-top: 1px solid #333;
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 0.78rem;
+    }
+
+    footer a { color: #c9a227; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header>
+  <div class="logo">DMM<span>プレミアム</span></div>
+  <a href="https://premium.dmm.com/" target="_blank" class="header-btn">公式サイトへ <i class="fa-solid fa-arrow-right"></i></a>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="hero-badge">会員限定特典・クーポン多数</div>
+  <h1>DMMのサービスを<br><span>もっとおトクに</span>楽しもう</h1>
+  <p>DMMプレミアムとは、DMMTVの対象作品が見放題になるほか、会員限定特典やクーポンなど、DMMの各種サービスをおトクに楽しむことができます。</p>
+  <a href="https://premium.dmm.com/" target="_blank" class="cta-btn">
+    <i class="fa-solid fa-crown"></i>ログイン・新規登録はこちら
+  </a>
+</section>
+
+<!-- 特典概要 -->
+<section class="benefits">
+  <div class="benefits-inner">
+    <h2 class="section-title">DMMプレミアム 3つの魅力</h2>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <i class="fa-solid fa-tv"></i>
+        <h4>DMMTVが見放題</h4>
+        <p>アニメ・映画・ドラマなど対象作品が見放題</p>
+      </div>
+      <div class="benefit-item">
+        <i class="fa-solid fa-ticket"></i>
+        <h4>会員限定クーポン</h4>
+        <p>各種サービスで使えるお得なクーポンが随時配布</p>
+      </div>
+      <div class="benefit-item">
+        <i class="fa-solid fa-gift"></i>
+        <h4>特典・キャンペーン</h4>
+        <p>会員だけが参加できるキャンペーンや特典が盛りだくさん</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ナビタブ -->
+<div class="nav-tabs">
+  <a href="#campaigns" class="nav-tab active">キャンペーン</a>
+  <a href="#benefits-detail" class="nav-tab">プレミアム特典</a>
+  <a href="https://premium.dmm.com/" target="_blank" class="nav-tab">クーポン</a>
+</div>
+
+<!-- キャンペーン -->
+<section class="campaigns" id="campaigns">
+  <h2 class="campaigns-title">開催中のキャンペーン・特典</h2>
+  <div class="campaign-grid">
+
+    <!-- 2,500円分ポイント -->
+    <a href="https://premium.dmm.com/" target="_blank" class="card card-blue">
+      <div class="card-inner">
+        <span class="card-tag limited">〜5/31まで</span>
+        <h3>DMMプレミアム新規登録で<br>DMMポイントプレゼント</h3>
+        <div class="highlight">2,500<span>円分</span></div>
+        <p class="sub">DMMポイントを最大2,500円分プレゼント！<br>この機会をお見逃しなく</p>
+        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
+      </div>
+    </a>
+
+    <!-- DMM英会話 学生限定 -->
+    <a href="https://premium.dmm.com/" target="_blank" class="card card-green">
+      <div class="card-inner">
+        <span class="card-tag limited">学生限定</span>
+        <h3>DMM英会話<br>新規・再入会でレッスン受講</h3>
+        <div class="highlight">20,400<span>円分</span></div>
+        <p class="sub">プラスネイティブチケット12枚分<br>追加料金なし・語条件あり</p>
+        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
+      </div>
+    </a>
+
+    <!-- DMM英会話 90%OFF -->
+    <a href="https://premium.dmm.com/" target="_blank" class="card card-orange">
+      <div class="card-inner">
+        <span class="card-tag gold">会員限定</span>
+        <h3>DMM英会話<br>スタンダードプラン</h3>
+        <div class="highlight">初月90<span>%OFF</span></div>
+        <p class="sub">月6,980円 → <strong style="color:#ffd54f;font-size:1.1rem;">初月698円</strong><br>毎日1レッスン・対象プランが新規・再開</p>
+        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
+      </div>
+    </a>
+
+    <!-- DMMオンクレ -->
+    <a href="https://premium.dmm.com/" target="_blank" class="card card-dark">
+      <div class="card-inner">
+        <span class="card-tag gold">会員限定</span>
+        <h3>DMMオンクレ<br>初回利用者に</h3>
+        <div class="highlight">2<span>プレイ無料！</span></div>
+        <p class="sub">DMMプレミアム会員限定！<br>初めてオンクレを利用する方対象（※一部台を除く）</p>
+        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
+      </div>
+    </a>
+
+    <!-- DMM × pixiv -->
+    <a href="https://premium.dmm.com/" target="_blank" class="card card-purple">
+      <div class="card-inner">
+        <span class="card-tag gold">セットプラン</span>
+        <h3>DMM × pixiv<br>推しホーダイ</h3>
+        <div class="highlight">980<span>円/月（税込）</span></div>
+        <p class="sub">DMMTVとpixivがお得な料金で<br>一緒に楽しめるセットプラン！</p>
+        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
+      </div>
+    </a>
+
+    <!-- お友達紹介 -->
+    <a href="https://premium.dmm.com/" target="_blank" class="card card-teal">
+      <div class="card-inner">
+        <span class="card-tag">お友達紹介</span>
+        <h3>お友達紹介プログラム<br>紹介するともらえる！</h3>
+        <div class="highlight" style="font-size:1.4rem;">紹介者 <span>500円分</span></div>
+        <p class="sub" style="margin-top:4px;">お友達には <strong style="color:#ffd54f;font-size:1.1rem;">1,000円相当</strong> の特典<br>えらべるPayでもらえる</p>
+        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
+      </div>
+    </a>
+
+    <!-- アニメイベント -->
+    <a href="https://premium.dmm.com/" target="_blank" class="card card-red" style="grid-column: 1 / -1;">
+      <div class="card-inner">
+        <span class="card-tag gold">DMMTVイベント</span>
+        <h3>TVアニメ「上伊那ぼたん、酔へる姿は百合の花」<br>サイン入りグラスGETのチャンス！</h3>
+        <p class="sub" style="margin-top:8px;">
+          DMMTVで視聴してサイン入りグラスが当たる！<br>
+          サインキャスト：上伊那ぼたん役 <strong>鈴代紗弓様</strong> ／ 硫波いぶき役 <strong>青山吉能様</strong><br>
+          DMMTVアニメ公式Xにて佐久間監督ロングインタビュー掲載中！
+        </p>
+        <span class="detail-btn">詳しくはこちら <i class="fa-solid fa-chevron-right"></i></span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- 下部CTA -->
+<section class="cta-section">
+  <h2>さあ、<span>DMMプレミアム</span>を始めよう</h2>
+  <p>DMMアカウントへのログインが必要です</p>
+  <a href="https://premium.dmm.com/" target="_blank" class="cta-btn">
+    <i class="fa-solid fa-crown"></i>ログインまたは新規登録
+  </a>
+</section>
+
+<!-- フッター -->
+<footer>
+  <p>本サイトはDMMプレミアムの非公式紹介サイトです。</p>
+  <p style="margin-top:6px;">公式サイト: <a href="https://premium.dmm.com/" target="_blank">premium.dmm.com</a></p>
+</footer>
+
+</body>
+</html>
