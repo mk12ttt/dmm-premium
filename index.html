@@ -18,73 +18,20 @@
       background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
       color: #fff;
       text-align: center;
-      padding: 28px 20px 24px;
-    }
-
-    /* ヒーロー下バナー */
-    .hero-banner {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    .hero-banner img {
-      width: 100%;
-      height: auto;
-      display: block;
+      padding: 40px 20px 32px;
     }
 
     .hero h1 {
       font-size: 1.6rem;
       font-weight: 900;
-      margin-bottom: 14px;
       line-height: 1.4;
-    }
-
-    @media (max-width: 400px) {
-      .hero h1 { font-size: 1.35rem; }
+      margin-bottom: 10px;
     }
 
     .hero h1 span { color: #c9a227; }
 
-    .hero p {
-      font-size: 0.95rem;
-      color: #ccc;
-      line-height: 1.8;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-
-    /* バナーグリッド */
-    .banners {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 32px 16px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    @media (max-width: 500px) {
-      .banners { grid-template-columns: 1fr; }
-    }
-
-    .banners img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    }
-
-    /* 説明文 */
-    .description {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 16px 24px 8px;
-      font-size: 0.95rem;
-      line-height: 1.9;
-      color: #333;
+    @media (max-width: 400px) {
+      .hero h1 { font-size: 1.35rem; }
     }
 
     /* ボタン */
@@ -105,6 +52,103 @@
       box-shadow: 0 4px 20px rgba(201,162,39,0.4);
       white-space: nowrap;
     }
+
+    /* 説明文 */
+    .description {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px 24px 8px;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: #333;
+    }
+
+    .description p + p { margin-top: 16px; }
+
+    /* 特典カード */
+    .features {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 16px 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .features { grid-template-columns: 1fr; }
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .feature-card .icon {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+
+    .feature-card h3 {
+      font-size: 0.95rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+      color: #111;
+    }
+
+    .feature-card p {
+      font-size: 0.82rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .feature-card .badge {
+      display: inline-block;
+      background: #c9a227;
+      color: #000;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    /* 区切り */
+    .section-title {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 900;
+      color: #111;
+      padding: 24px 20px 4px;
+    }
+
+    /* 下部CTA */
+    .cta-bottom {
+      padding: 24px 20px 48px;
+      text-align: center;
+    }
+
+    .cta-bottom a {
+      display: inline-block;
+      background: #c9a227;
+      color: #000;
+      font-size: 1.05rem;
+      font-weight: 900;
+      padding: 16px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(201,162,39,0.4);
+      white-space: nowrap;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 0.72rem;
+      color: #999;
+    }
   </style>
 </head>
 <body>
@@ -113,36 +157,76 @@
   <h1>DMMプレミアムの<br><span>お得な特典・キャンペーン</span></h1>
 </section>
 
-<div class="hero-banner">
-  <img src="images/banner_pixiv.jpg" alt="DMM×pixiv 推しホーダイ">
-</div>
-
 <div class="cta">
   <a href="https://premium.dmm.com/" target="_blank">DMMプレミアム 公式サイトへ →</a>
 </div>
 
 <div class="description">
   <p>DMMプレミアムは、合同会社DMM.comが提供する月額制の会員サービスです。アニメ・映画・ドラマ・バラエティなど、豊富な動画コンテンツを視聴できる「DMM TV」を中心に、さまざまな特典を利用できます。</p>
-  <br>
   <p>特にアニメ作品に強く、新作アニメから話題作、人気シリーズまで幅広く配信されており、スマートフォン・PC・タブレット・テレビなど、さまざまなデバイスで視聴可能です。</p>
-  <br>
   <p>また、DMMプレミアム会員限定で、DMMブックス・DMM GAMES・オンラインクレーンゲームなど、DMMが提供する各種サービスで利用できるクーポンや特典が付与される場合があります。</p>
-  <br>
   <p>月額料金で対象作品が見放題となり、初めて利用する方でも手軽にエンタメコンテンツを楽しめるサービスとなっています。</p>
 </div>
 
-<div class="banners">
-  <img src="images/banner_2500pt.jpg" alt="最大2,500円分ポイント">
-  <img src="images/banner_eikaiwa_90off.jpg" alt="DMM英会話 初月90%OFF">
-  <img src="images/banner_eikaiwa_student.jpg" alt="DMM英会話 学生限定">
-  <img src="images/banner_onkure.jpg" alt="DMMオンクレ 初回2プレイ無料">
-  <img src="images/banner_friends.jpg" alt="お友達紹介プログラム">
-  <img src="images/banner_anime.jpg" alt="上伊那ぼたん サイン入りグラス">
+<p class="section-title">会員限定の主な特典</p>
+
+<div class="features">
+
+  <div class="feature-card">
+    <div class="icon">🎬</div>
+    <h3>DMM TV 見放題</h3>
+    <p>アニメ・映画・ドラマなど対象作品が月額料金で見放題</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="badge">〜5/31まで</div>
+    <h3>新規登録で最大<br>2,500円分ポイント</h3>
+    <p>DMMポイントをプレゼント。この機会にぜひ！</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="badge">学生限定</div>
+    <h3>DMM英会話<br>最大20,400円分</h3>
+    <p>新規・再入会でレッスンチケットが受講可能（追加料金なし）</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="badge">会員限定</div>
+    <h3>DMM英会話<br>初月90%OFF</h3>
+    <p>スタンダードプラン月6,980円 → 初月698円</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="badge">会員限定</div>
+    <h3>DMMオンクレ<br>初回2プレイ無料</h3>
+    <p>オンラインクレーンゲームを初めて利用する方に（※一部台を除く）</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="badge">セットプラン</div>
+    <h3>DMM × pixiv<br>月額980円（税込）</h3>
+    <p>DMMTVとpixivがお得な料金で楽しめるセットプラン</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="icon">👥</div>
+    <h3>お友達紹介で<br>500円分もらえる</h3>
+    <p>紹介されたお友達には1,000円相当の特典もプレゼント</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="icon">📺</div>
+    <h3>DMM TVで<br>アニメイベント開催</h3>
+    <p>対象作品を見てサイン入りグッズが当たるキャンペーンを実施中</p>
+  </div>
+
 </div>
 
-<div class="cta">
+<div class="cta-bottom">
   <a href="https://premium.dmm.com/" target="_blank">DMMプレミアム 公式サイトへ →</a>
 </div>
+
+<footer>本ページはDMMプレミアムの紹介ページです。</footer>
 
 </body>
 </html>
