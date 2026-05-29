@@ -407,15 +407,22 @@ header nav a:hover { color: #c9a227; }
 .article-cta {
   background: #1a1a2e;
   border-radius: 12px;
-  padding: 28px 20px;
+  padding: 28px 16px;
   text-align: center;
   margin-top: 36px;
+  overflow: hidden;
 }
 
 .article-cta p {
   color: #ccc;
   font-size: 0.88rem;
   margin-bottom: 16px;
+}
+
+.article-cta .btn-main {
+  max-width: 100%;
+  padding: 15px 24px;
+  font-size: 0.95rem;
 }
 
 /* フッター */
