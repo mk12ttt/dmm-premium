@@ -286,65 +286,6 @@ header nav a:hover { color: #c9a227; }
   margin-bottom: 12px;
 }
 
-/* テーブル */
-.info-table {
-  overflow-x: auto;
-  margin: 16px 0 24px;
-}
-
-.info-table table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.88rem;
-}
-
-.info-table th {
-  background: #1a1a2e;
-  color: #fff;
-  padding: 10px 12px;
-  text-align: left;
-}
-
-.info-table td {
-  padding: 10px 12px;
-  border-bottom: 1px solid #e0e0e0;
-  background: #fff;
-}
-
-.info-table tr:nth-child(even) td { background: #f9f9f9; }
-
-/* 特典リスト */
-.benefit-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin: 16px 0 24px;
-}
-
-.benefit-item {
-  display: flex;
-  gap: 14px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 16px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
-}
-
-.benefit-item i {
-  color: #c9a227;
-  font-size: 1.2rem;
-  margin-top: 3px;
-  flex-shrink: 0;
-}
-
-.benefit-item h3 {
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.benefit-item p { font-size: 0.82rem; color: #555; margin: 0; }
-
 /* チェックリスト */
 .check-list {
   list-style: none;
@@ -368,40 +309,6 @@ header nav a:hover { color: #c9a227; }
   color: #c9a227;
   font-weight: 700;
 }
-
-/* ジャンルグリッド */
-.genre-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin: 16px 0 24px;
-}
-
-@media (max-width: 500px) {
-  .genre-grid { grid-template-columns: 1fr; }
-}
-
-.genre-card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 18px 14px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
-}
-
-.genre-card i {
-  font-size: 1.4rem;
-  color: #c9a227;
-  margin-bottom: 8px;
-  display: block;
-}
-
-.genre-card h3 {
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.genre-card p { font-size: 0.8rem; color: #666; }
 
 /* 記事内CTA */
 .article-cta {
@@ -464,4 +371,180 @@ footer {
 .footer-note {
   font-size: 0.72rem;
   color: #666;
+}
+
+/* ===== 漫画カードグリッド（トップページ） ===== */
+.manga-section { padding: 44px 0; }
+
+.manga-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+@media (max-width: 700px) { .manga-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px) { .manga-grid { grid-template-columns: 1fr; } }
+
+.manga-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.15s;
+  display: block;
+  text-decoration: none;
+  color: #212121;
+}
+.manga-card:hover { transform: translateY(-3px); }
+
+/* 画像エリア（画像がない場合はグレーのプレースホルダーを表示） */
+.manga-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: #d8d8d8;
+  overflow: hidden;
+}
+.manga-img-wrap img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.manga-img-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #e0e0e0;
+  color: #999;
+  font-size: 0.7rem;
+  text-align: center;
+  padding: 8px;
+  z-index: 0;
+  line-height: 1.5;
+}
+.manga-img-placeholder i { font-size: 2rem; color: #bbb; margin-bottom: 8px; display: block; }
+
+.manga-card-body { padding: 12px 14px; }
+
+.manga-genre {
+  display: inline-block;
+  background: #c9a227;
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-bottom: 6px;
+}
+
+.manga-card-body h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.manga-card-body .manga-desc {
+  font-size: 0.78rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== 記事内漫画レビュー（article1用） ===== */
+.manga-review {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.manga-review-inner {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 14px;
+  align-items: flex-start;
+}
+@media (max-width: 500px) {
+  .manga-review-inner { flex-direction: column; }
+}
+
+.manga-review-cover {
+  position: relative;
+  width: 90px;
+  min-width: 90px;
+  aspect-ratio: 3/4;
+  background: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.manga-review-cover img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.manga-review-cover .img-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #e0e0e0;
+  color: #aaa;
+  font-size: 0.6rem;
+  text-align: center;
+  padding: 4px;
+  line-height: 1.4;
+  z-index: 0;
+}
+.manga-review-cover .img-label i { font-size: 1.4rem; color: #bbb; margin-bottom: 4px; display: block; }
+
+.manga-review-meta { flex: 1; }
+.manga-review-meta h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+.manga-review-meta .manga-genre { margin-bottom: 8px; }
+
+.manga-stars { color: #c9a227; font-size: 1rem; margin-bottom: 8px; }
+.manga-stars span { color: #999; font-size: 0.8rem; margin-left: 4px; }
+
+.manga-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.manga-tag {
+  background: #f0f0f0;
+  color: #555;
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+/* ===== ジャンル別セクション（article2用） ===== */
+.genre-section { margin-bottom: 44px; }
+
+.genre-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 900;
+  margin-bottom: 14px;
+  padding: 6px 16px;
+  background: #1a1a2e;
+  color: #c9a227;
+  border-radius: 6px;
+}
+
+.manga-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 480px) {
+  .manga-grid-2 { grid-template-columns: 1fr; }
 }
