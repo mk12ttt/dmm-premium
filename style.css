@@ -524,6 +524,71 @@ footer {
   border-radius: 20px;
 }
 
+/* ===== 一覧に戻るリンク ===== */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #c9a227;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 24px 0 20px;
+}
+.back-link:hover { text-decoration: underline; }
+
+/* ===== 漫画詳細レイアウト ===== */
+.manga-detail {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  align-items: flex-start;
+}
+@media (max-width: 560px) {
+  .manga-detail { flex-direction: column; }
+}
+
+.manga-detail-img-wrap {
+  position: relative;
+  width: 160px;
+  min-width: 160px;
+  aspect-ratio: 3/4;
+  background: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+@media (max-width: 560px) {
+  .manga-detail-img-wrap { width: 100%; min-width: unset; max-width: 200px; }
+}
+.manga-detail-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.manga-detail-img-wrap .manga-img-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.manga-detail-info { flex: 1; }
+.manga-detail-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1.4;
+  margin: 8px 0 4px;
+}
+@media (max-width: 400px) {
+  .manga-detail-title { font-size: 1.15rem; }
+}
+.manga-detail-subtitle {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
 /* ===== ジャンル別セクション（article2用） ===== */
 .genre-section { margin-bottom: 44px; }
 
