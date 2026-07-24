@@ -471,6 +471,26 @@ footer {
   margin: 0;
 }
 
+.manga-card-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-card-purchase {
+  display: block;
+  text-align: center;
+  background: #c9a227;
+  color: #1a1a2e;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 8px;
+  transition: background 0.15s;
+}
+.btn-card-purchase:hover { background: #e0b83a; }
+
 /* ===== 記事内漫画レビュー（article1用） ===== */
 .manga-review {
   background: #fff;
