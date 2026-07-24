@@ -409,6 +409,7 @@ footer {
   display: block;
   text-decoration: none;
   color: #212121;
+  cursor: pointer;
 }
 .manga-card:hover { transform: translateY(-3px); }
 
@@ -486,7 +487,7 @@ footer {
   padding: 10px;
   border-radius: 6px;
   text-decoration: none;
-  margin-top: 8px;
+  margin-top: 12px;
   transition: background 0.15s;
 }
 .btn-card-purchase:hover { background: #e0b83a; }
